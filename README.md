@@ -127,11 +127,6 @@ For action helpers, this will mean better currying semantics:
 #### `pipe`
 Pipes the return values of actions in a sequence of actions. This is useful to compose a pipeline of actions, so each action can do only one thing.
 
-The `pipe` helper is Promise-aware, meaning that if any action in the pipeline returns a Promise, its return value will be piped into the next action. If the Promise rejects, the rest of the pipeline will be aborted.
-
-The `pipe` helper can also be used directly as a closure action (using `pipe-action`) when being passed into a Component, which provides an elegant syntax for composing actions:
-
-
 **_Syntax_**
 
 ```hbs
@@ -158,7 +153,13 @@ Zero or more arguments to be passed to the first action i.e. `action1`.
 
 The return value of the last action in the sequence i.e. `actionN`
 
-**_Examples_**
+**_Description_**
+
+The `pipe` helper is Promise-aware, meaning that if any action in the pipeline returns a Promise, its return value will be piped into the next action. If the Promise rejects, the rest of the pipeline will be aborted.
+
+The `pipe` helper can also be used directly as a closure action (using `pipe-action`) when being passed into a Component, which provides an elegant syntax for composing actions:
+
+
 
 ```hbs
 {{foo-bar
@@ -203,7 +204,7 @@ Zero or more arguments to the given action.
 
 The return value of `action`
 
-**_Examples_**
+**_Description_**
 ```hbs
 The square of 4 is {{compute (action "square") 4}}
 ```
@@ -247,7 +248,7 @@ Toggles a boolean value.
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -264,7 +265,7 @@ Allows for the passed in action to not exist.
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -288,7 +289,7 @@ called.
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -309,7 +310,7 @@ Camelizes a string using `Ember.String.camelize`.
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -326,7 +327,7 @@ Capitalizes a string using `Ember.String.capitalize`.
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -343,7 +344,7 @@ Classifies a string using `Ember.String.classify`.
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -360,7 +361,7 @@ Dasherizes a string using `Ember.String.dasherize`.
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -377,7 +378,7 @@ Truncates a string with a characterLimit.
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -394,7 +395,7 @@ Capitalizes a string using `Ember.String.underscore`.
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -411,7 +412,7 @@ Mark a string as safe for unescaped output with Ember templates using `Ember.Str
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -428,7 +429,7 @@ Titleizes a string
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -457,7 +458,7 @@ See also: [Ember `w` documentation](http://emberjs.com/api/classes/Ember.String.
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -479,7 +480,7 @@ Similar to the `hash` helper, this lets you compose arrays directly in the templ
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -497,7 +498,7 @@ Maps a callback on an array.
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -515,7 +516,7 @@ Maps an array on a property.
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -549,7 +550,7 @@ You can also pass a method as the first argument:
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -568,7 +569,7 @@ Filters an array by a callback.
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -602,7 +603,7 @@ You can also pass an action as second argument:
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -636,7 +637,7 @@ You can also pass an action as third argument:
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -658,7 +659,7 @@ Returns the first entry matching the given value.
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -677,7 +678,7 @@ Creates an array of unique values that are included in all given arrays.
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -700,7 +701,7 @@ Invokes a method on an object, or on each object of an array.
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -719,7 +720,7 @@ Joins arrays to create an array of unique values. When applied to a single array
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -738,7 +739,7 @@ Returns the first `n` entries of a given array.
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -757,7 +758,7 @@ Returns an array with the first `n` entries omitted.
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -775,7 +776,7 @@ The last argument is initial value. If you omit it, undefined will be used.
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -801,7 +802,7 @@ You can also give it a value to repeat:
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -819,7 +820,7 @@ Reverses the order of the array.
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -853,7 +854,7 @@ And works with a negative range:
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -881,7 +882,7 @@ Removes blank items from an array.
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -900,7 +901,7 @@ Checks if a given value or sub-array is contained within an array.
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -918,7 +919,7 @@ Appends the given arrays and/or values into a single flat array.
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -938,7 +939,7 @@ Returns the given array split into sub-arrays the length of the given value.
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -956,7 +957,7 @@ Returns the given array without the given item(s).
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -980,7 +981,7 @@ Shuffles an array with a randomizer function, or with `Math.random` as a default
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -998,7 +999,7 @@ Flattens an array to a single dimension.
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -1014,7 +1015,7 @@ Returns the object at the given index of an array.
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -1032,7 +1033,7 @@ Slices an array
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -1049,7 +1050,7 @@ parameter, `useDeepEqual`, to flag whether a deep equal comparison should be per
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -1068,7 +1069,7 @@ parameter, `useDeepEqual`, to flag whether a deep equal comparison should be per
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -1085,7 +1086,7 @@ parameter, `useDeepEqual`, to flag whether a deep equal comparison should be per
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -1104,7 +1105,7 @@ parameter, `useDeepEqual`, to flag whether a deep equal comparison should be per
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -1131,7 +1132,7 @@ Returns an object where the keys are the unique values of the given property, an
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -1152,7 +1153,7 @@ Increments by `1` or `step`.
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -1169,7 +1170,7 @@ Decrements by `1` or `step`.
 
 **_Return Value_**
 
-**_Examples_**
+**_Description_**
 
 **[⬆️ back to top](#available-helpers)**
 
